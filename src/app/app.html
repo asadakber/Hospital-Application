@@ -1,0 +1,39 @@
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar  color="orangered">
+        <ion-title>Menu</ion-title>
+        
+      </ion-toolbar>
+    </ion-header>
+  
+    <ion-content>
+        <ion-list>
+            <ion-item color="dark">
+              <ion-avatar item-start>
+                <img src="assets/imgs/11026128_687108801394823_5336003533458736407_n.jpg">
+              </ion-avatar>
+              <h2 style="color:white">OSCAR BARRETT</h2>
+              <button color="orangered" ion-button clear>signout</button>
+              
+            </ion-item>
+
+          </ion-list>
+         
+          <!-- <ion-item>Dashboard</ion-item>
+          <ion-item>   <ion-icon ios="ios-settings" md="md-settings"></ion-icon>Services</ion-item>
+          <ion-item>Category</ion-item>
+          <ion-item>Details</ion-item> -->
+      <ion-list>
+
+        <button style="background-color:transparent;font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+            <ion-icon style="color:orangered" ios="ios-arrow-forward" md="md-arrow-forward"></ion-icon>
+          {{p.title}}
+
+        </button>
+      </ion-list>
+    </ion-content>
+  
+  </ion-menu>
+  
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

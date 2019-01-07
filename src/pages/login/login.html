@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="orangered">
+    <ion-title>login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="align"><img width="150" src="assets/imgs/a.png" /></div>
+    <div class="align"><img src="assets/imgs/logo1.png" /></div>
+    <div class="margin">
+     <p>Touching Breath</p>
+   </div>
+   <form [formGroup]="loginForm">
+   <ion-list>
+     
+     <ion-item style="border:1px solid lightgrey; border-radius:10px;">
+       <ion-label>
+          <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+       </ion-label>
+       <ion-input formControlName="email" type="text" placeholder="Email Address"></ion-input>
+     </ion-item>
+     <ion-item style="border:1px solid lightgrey; border-radius:10px;margin-top:10px;">
+        <ion-label>
+            <ion-icon ios="ios-key" md="md-key"></ion-icon>
+        </ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+   </ion-list>
+  <div style="text-align:center"><button color="orangered" ion-button clear (click)="goToResetPassword()">Forget Password</button></div> 
+   <button [disabled]="!this.loginForm.valid"  color="orangered" ion-button block round (click)="signinUser()">Login</button>
+   <button  (click)="goToSignUpPage()" color="dark" ion-button block round>Create account</button>
+   <div style="text-align:center"><button color="orangered" ion-button clear>Skip</button></div> 
+  </form>
+</ion-content>

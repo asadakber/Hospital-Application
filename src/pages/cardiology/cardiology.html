@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar color="orangered">
+    <ion-title>cardiology</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h4 style="color:#FF4500">{{ heading }}</h4>
+<p style="color:#60646B">{{ details }}</p>
+  <h4 style="color:#FF4500">{{ Heading }}</h4>
+  <p style="color:#60646B">{{ Investigations }}</p>
+    <ul>
+      <li *ngFor="let card of cardiology">
+        {{ card }}
+      </li>
+    </ul>
+</ion-content>
